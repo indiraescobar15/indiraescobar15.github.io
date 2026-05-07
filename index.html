@@ -234,7 +234,15 @@
   }
   html[data-mood="bone"] .back-to-top:hover { background: var(--ember); border-color: var(--ember); color: var(--ink); }
   body:not(.is-past-hero) .chrome-scroll-hint { opacity: 0; pointer-events: none; }
-  .chrome-scroll-hint { transition: opacity .35s ease; }
+  .chrome-scroll-hint {
+    transition: opacity .35s ease;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+  }
+  @media (max-width: 640px) { .chrome-scroll-hint { display: none; } }
   .chrome-top .left,
   .chrome-bottom .left { justify-self: start; }
   .chrome-top .right,
@@ -453,6 +461,9 @@
     letter-spacing: 0.3em;
     text-transform: uppercase;
     color: var(--bone-3);
+  }
+  @media (max-width: 640px) {
+    .hero__scroll span:first-child { display: none; }
   }
   .hero__scroll .line {
     width: 1px; height: 60px;
@@ -1550,14 +1561,14 @@
 </div>
 
 <div class="chrome-bottom">
-  <div class="left">Index 01–06</div>
+  <div class="left"></div>
   <div class="center">
     <a href="#what">What</a>
     <a href="#oral">Voices</a>
     <a href="#media">Media</a>
     <a href="#external">Archive</a>
   </div>
-  <div class="right chrome-scroll-hint"><span class="scroll-down">Scroll ↓</span></div>
+  <div class="right"><span class="chrome-scroll-hint"><span class="scroll-down">Scroll ↓</span></span></div>
 </div>
 
 <button type="button" class="back-to-top" aria-label="Back to top">
