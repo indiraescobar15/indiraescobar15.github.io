@@ -1,0 +1,2168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cancer Alley · An Oral History</title>
+<meta name="description" content="An oral-history archive of communities living within Louisiana's 85-mile petrochemical corridor between New Orleans and Baton Rouge." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,500;1,9..144,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --ink:        #07070a;
+    --ink-2:      #0d0d12;
+    --ink-3:      #14131a;
+    --bone:       #ece4d2;
+    --bone-2:     #d8cdb4;
+    --bone-3:     #b3a78c;
+    --rule:       rgba(236, 228, 210, 0.14);
+    --rule-strong:rgba(236, 228, 210, 0.32);
+    --ember:      oklch(0.62 0.13 195);
+    --ember-soft: oklch(0.62 0.13 195 / 0.16);
+    --oxblood:    oklch(0.34 0.10 18);
+    --solar:      oklch(0.78 0.14 90);
+    --serif: "DM Serif Display", "Fraunces", "Iowan Old Style", Georgia, serif;
+    --sans:  "Inter", system-ui, -apple-system, "Helvetica Neue", sans-serif;
+    --mono:  "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --serif-tracking: -0.02em;
+    --serif-style: normal;
+    --air: 1;
+  }
+
+  /* === VOICE === */
+  html[data-voice="witness"] {
+    --serif: "Source Serif 4", "Iowan Old Style", "Charter", Georgia, serif;
+    --sans:  "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+    --mono:  "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    --serif-tracking: -0.005em;
+  }
+  html[data-voice="document"] {
+    --serif: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    --sans:  "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    --mono:  "IBM Plex Mono", ui-monospace, Menlo, monospace;
+    --serif-tracking: -0.04em;
+  }
+  html[data-voice="document"] .hero__title,
+  html[data-voice="document"] .what__h,
+  html[data-voice="document"] .section-head .h,
+  html[data-voice="document"] .modal__name,
+  html[data-voice="document"] .foot__title,
+  html[data-voice="document"] .portrait__name {
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: -0.04em;
+  }
+  html[data-voice="document"] .hero__title em,
+  html[data-voice="document"] .what__h em,
+  html[data-voice="document"] .section-head .h em,
+  html[data-voice="document"] .foot__title em,
+  html[data-voice="document"] .modal__name em {
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-color: var(--ember);
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+  }
+  html[data-voice="document"] .what__lede,
+  html[data-voice="document"] .modal__sub,
+  html[data-voice="document"] .hero__sub,
+  html[data-voice="document"] .section-head .deck,
+  html[data-voice="document"] .foot__lede {
+    font-style: normal;
+  }
+
+  /* === MOOD === */
+  html[data-mood="dusk"] {
+    --ink:   #08070d;
+    --ink-2: #0c0b14;
+    --ink-3: #141822;
+    --bone:  #e6ecf1;
+    --bone-2:#cfd6dd;
+    --bone-3:#94a0ac;
+    --rule:       rgba(230, 236, 241, 0.14);
+    --rule-strong:rgba(230, 236, 241, 0.32);
+    --ember:      oklch(0.7 0.11 230);
+    --ember-soft: oklch(0.7 0.11 230 / 0.16);
+    --oxblood: oklch(0.32 0.10 22);
+    --solar: oklch(0.74 0.13 200);
+  }
+  html[data-mood="bone"] {
+    --ink:   #f1ece2;
+    --ink-2: #e9e3d6;
+    --ink-3: #ddd4c2;
+    --bone:  #18140e;
+    --bone-2:#2a2620;
+    --bone-3:#5b5448;
+    --rule:       rgba(24, 20, 14, 0.18);
+    --rule-strong:rgba(24, 20, 14, 0.36);
+    --ember:      oklch(0.58 0.18 45);
+  }
+  /* In bone mode, sections that were dark become light, and vice versa */
+  html[data-mood="bone"] body { background: var(--ink); color: var(--bone); }
+  html[data-mood="bone"] .what,
+  html[data-mood="bone"] .luz {
+    background: #f6f1e6;
+    color: #18140e;
+  }
+  html[data-mood="bone"] .oral,
+  html[data-mood="bone"] .testimonies,
+  html[data-mood="bone"] .foot {
+    background: #ebe5d6;
+    color: #18140e;
+  }
+  html[data-mood="bone"] .oral .section-head .num,
+  html[data-mood="bone"] .testimonies .section-head .num,
+  html[data-mood="bone"] .oral .section-head .deck,
+  html[data-mood="bone"] .testimonies .section-head .deck,
+  html[data-mood="bone"] .foot__lede,
+  html[data-mood="bone"] .foot__meta,
+  html[data-mood="bone"] .vid__caption,
+  html[data-mood="bone"] .portrait__role,
+  html[data-mood="bone"] .portrait__index,
+  html[data-mood="bone"] .portrait__meta {
+    color: rgba(24,20,14,0.62);
+  }
+  html[data-mood="bone"] .vid,
+  html[data-mood="bone"] .portrait {
+    background: #f6f1e6;
+    border-color: rgba(24,20,14,0.18);
+  }
+  html[data-mood="bone"] .portrait__meta strong,
+  html[data-mood="bone"] .vid__caption strong { color: #18140e; }
+  html[data-mood="bone"] .chrome-top,
+  html[data-mood="bone"] .chrome-bottom { mix-blend-mode: normal; color: rgba(24,20,14,0.62); }
+  html[data-mood="bone"] .chrome-bottom .center a { color: rgba(24,20,14,0.62); }
+  html[data-mood="bone"] .chrome-bottom .center a:hover { color: #18140e; }
+  html[data-mood="bone"] .foot__skyline::before {
+    background: linear-gradient(180deg, #ebe5d6 0%, rgba(235,229,214,0.2) 25%, rgba(235,229,214,0.7) 100%);
+  }
+  html[data-mood="bone"] .foot__meta {
+    border-top-color: rgba(24,20,14,0.18);
+    color: rgba(24,20,14,0.55);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { margin: 0; }
+  body {
+    margin: 0;
+    overflow-x: clip;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ink);
+    color: var(--bone);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  button { font: inherit; cursor: pointer; border: 0; background: transparent; color: inherit; }
+
+  ::selection { background: var(--ember); color: var(--ink); }
+
+  .mono { font-family: var(--mono); font-weight: 400; letter-spacing: 0.02em; }
+  .serif { font-family: var(--serif); }
+  .label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+  }
+  .ember { color: var(--ember); }
+
+  /* ===========================================================
+     PERSISTENT CHROME
+     =========================================================== */
+  .chrome-top, .chrome-bottom {
+    position: fixed; left: 0; right: 0;
+    z-index: 50;
+    pointer-events: none;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    padding: 20px 28px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+    mix-blend-mode: difference;
+  }
+  .chrome-top { top: 0; }
+  .chrome-bottom { bottom: 0; transition: opacity .35s ease, transform .35s ease; }
+  /* When near the bottom, fade the chrome-bottom strip away so the footer reads clean.
+     A floating back-to-top button takes its place (rendered separately below). */
+  body.is-near-bottom .chrome-bottom { opacity: 0; pointer-events: none; transform: translateY(8px); }
+
+  /* Floating back-to-top — appears only at near-bottom, replaces the chrome strip */
+  .back-to-top {
+    position: fixed;
+    right: clamp(20px, 3vw, 36px);
+    bottom: clamp(20px, 3vw, 32px);
+    z-index: 55;
+    width: 44px; height: 44px;
+    display: grid; place-items: center;
+    border-radius: 999px;
+    border: 1px solid rgba(245,239,224,0.32);
+    background: rgba(13,12,10,0.62);
+    backdrop-filter: blur(8px);
+    color: var(--bone);
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(10px);
+    pointer-events: none;
+    transition: opacity .35s ease, transform .35s ease, background .25s ease, border-color .25s ease;
+  }
+  body.is-near-bottom .back-to-top {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  .back-to-top:hover { background: var(--ember); border-color: var(--ember); color: var(--ink); }
+  .back-to-top svg { width: 12px; height: 8px; }
+  html[data-mood="bone"] .back-to-top {
+    background: rgba(255,255,255,0.78);
+    border-color: rgba(24,20,14,0.18);
+    color: #18140e;
+  }
+  html[data-mood="bone"] .back-to-top:hover { background: var(--ember); border-color: var(--ember); color: var(--ink); }
+  body:not(.is-past-hero) .chrome-scroll-hint { opacity: 0; pointer-events: none; }
+  .chrome-scroll-hint { transition: opacity .35s ease; }
+  .chrome-top .left,
+  .chrome-bottom .left { justify-self: start; }
+  .chrome-top .right,
+  .chrome-bottom .right { justify-self: end; }
+  .chrome-top .center { justify-self: center; }
+  .chrome-bottom .center { justify-self: center; }
+  .chrome-bottom .center { display: flex; gap: 18px; pointer-events: auto; }
+  .chrome-bottom .center a {
+    color: var(--bone-3);
+    text-decoration: none;
+    transition: color .25s ease;
+  }
+  .chrome-bottom .center a:hover { color: var(--bone); }
+
+  /* ===========================================================
+     HERO
+     =========================================================== */
+  .hero {
+    position: relative;
+    width: 100%;
+    height: 100svh;
+    min-height: 720px;
+    background: var(--ink);
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .hero__stage { position: absolute; inset: 0; z-index: 0; }
+  .hero__slide {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 2.4s ease;
+    will-change: transform, opacity;
+    transform: scale(1.04);
+    animation: hero-pan 22s ease-out infinite alternate;
+  }
+  .hero__slide.is-active { opacity: 1; }
+  @keyframes hero-pan {
+    from { transform: scale(1.02) translate3d(-1%, -0.5%, 0); }
+    to   { transform: scale(1.12) translate3d(1.5%, 1%, 0); }
+  }
+
+  .hero__veil {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(80% 60% at 50% 70%, rgba(0,0,0,0) 0%, rgba(0,0,0,calc(0.55 * var(--air))) 100%),
+      linear-gradient(180deg, rgba(13,12,10,calc(0.55 * var(--air))) 0%, rgba(13,12,10,calc(0.15 * var(--air))) 30%, rgba(13,12,10,calc(0.85 * var(--air))) 100%);
+    z-index: 1;
+    transition: opacity .6s ease;
+  }
+  .hero__grain {
+    position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.95  0 0 0 0 0.92  0 0 0 0 0.85  0 0 0 0.18 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    opacity: calc(0.5 * var(--air));
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity .6s ease;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    padding: clamp(60px, 8vh, 110px) clamp(24px, 6vw, 96px) clamp(64px, 10vh, 120px);
+  }
+
+  .hero__edge {
+    position: absolute;
+    left: clamp(24px, 5vw, 72px);
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    transform-origin: left center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+    white-space: nowrap;
+    z-index: 4;
+  }
+  .hero__edge::before {
+    content: "";
+    display: inline-block;
+    width: 56px;
+    height: 1px;
+    background: var(--bone-3);
+    vertical-align: middle;
+    margin-right: 18px;
+  }
+
+  .hero__coords {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+    text-align: right;
+    line-height: 1.9;
+  }
+  .hero__title-row {
+    text-align: left;
+  }
+  .hero__kicker {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 18px;
+    margin-bottom: clamp(18px, 3vh, 32px);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--bone-2);
+  }
+  .hero__kicker .dot {
+    display: inline-block;
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--ember);
+    box-shadow: 0 0 14px var(--ember);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.55; transform: scale(0.78); }
+  }
+
+  .hero__title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(64px, 14vw, 240px);
+    line-height: 0.86;
+    letter-spacing: -0.025em;
+    color: var(--bone);
+    margin: 0;
+    text-wrap: balance;
+  }
+  .hero__title em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--solar);
+    position: relative;
+    font-size: 1.05em;
+    letter-spacing: -0.01em;
+  }
+  .hero__title .word {
+    display: inline-block;
+    overflow: visible;
+    vertical-align: bottom;
+    padding-bottom: 0.18em;
+  }
+  .hero__title .word > span {
+    display: inline-block;
+    transform: translateY(110%);
+    animation: rise 1.1s cubic-bezier(.2,.7,.2,1) forwards;
+  }
+  .hero__title .word.w2 > span { animation-delay: .15s; }
+  @keyframes rise { to { transform: translateY(0); } }
+
+  .hero__sub {
+    margin: clamp(20px, 3vh, 36px) 0 0;
+    max-width: 720px;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(20px, 1.9vw, 28px);
+    line-height: 1.4;
+    color: var(--bone-2);
+    opacity: 0;
+    animation: fade-up .9s ease .8s forwards;
+  }
+  @keyframes fade-up { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+  .hero__bottom {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 3vw, 56px);
+    border-top: 1px solid var(--rule);
+    padding-top: 22px;
+    opacity: 0;
+    animation: fade-up .9s ease 1.1s forwards;
+  }
+  .stat-pill { display: flex; flex-direction: column; gap: 6px; }
+  .stat-pill .num {
+    font-family: var(--serif);
+    font-size: clamp(28px, 3.6vw, 44px);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--bone);
+  }
+  .stat-pill .num em { color: var(--ember); font-style: normal; }
+  .stat-pill .lab {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+    line-height: 1.5;
+  }
+  @media (max-width: 720px) {
+    .hero__bottom { grid-template-columns: 1fr; gap: 14px; }
+    .hero__edge { display: none; }
+  }
+
+  .hero__scroll {
+    position: absolute;
+    bottom: 28px; right: clamp(24px, 5vw, 72px);
+    z-index: 5;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+  }
+  .hero__scroll .line {
+    width: 1px; height: 60px;
+    background: linear-gradient(to bottom, var(--bone-3), transparent);
+    animation: scroll-line 2.6s ease-in-out infinite;
+  }
+  @keyframes scroll-line {
+    0% { transform: scaleY(0); transform-origin: top; }
+    50% { transform: scaleY(1); transform-origin: top; }
+    51% { transform-origin: bottom; }
+    100% { transform: scaleY(0); transform-origin: bottom; }
+  }
+
+  /* ===========================================================
+     WHAT IS — editorial letter
+     =========================================================== */
+  .what {
+    background: var(--bone);
+    color: var(--ink);
+    padding: clamp(96px, 14vh, 180px) clamp(24px, 6vw, 96px);
+    position: relative;
+  }
+  .what__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: clamp(40px, 8vw, 120px);
+    align-items: start;
+  }
+  .what__head {
+    position: sticky;
+    top: 60px;
+  }
+  .what__num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    color: rgba(13,12,10,0.55);
+    text-transform: uppercase;
+  }
+  .what__h {
+    margin: 18px 0 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 4.4vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .what__h em { color: var(--solar); font-style: italic; font-weight: 400; font-size: 1.08em; letter-spacing: -0.01em; }
+  .what__rule {
+    width: 64px; height: 2px;
+    background: var(--ember);
+    margin-top: 26px;
+  }
+
+  .what__body {
+    position: relative;
+  }
+  .what__cite {
+    margin: 18px 0 0;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(13,12,10,0.55);
+  }
+  .what__lede {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(22px, 2.6vw, 36px);
+    line-height: 1.32;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    text-wrap: pretty;
+    margin: 0;
+  }
+  .what__lede .dropcap {
+    float: left;
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(86px, 10vw, 150px);
+    line-height: 0.82;
+    color: var(--ember);
+    margin: 6px 14px 0 -4px;
+  }
+  .what__lede mark {
+    background: transparent;
+    color: var(--ink);
+    border-bottom: 2px solid var(--ember);
+    padding-bottom: 1px;
+  }
+
+  .what__stats {
+    margin-top: clamp(56px, 8vh, 100px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid rgba(13,12,10,0.18);
+  }
+  .what__stat {
+    padding: 28px 24px 28px 0;
+    border-right: 1px solid rgba(13,12,10,0.12);
+  }
+  .what__stat:last-child { border-right: 0; padding-right: 0; }
+  .what__stat .num {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(56px, 7vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.03em;
+    color: var(--ink);
+    display: flex; align-items: baseline; gap: 4px;
+  }
+  .what__stat .num em {
+    font-family: var(--mono);
+    font-style: normal;
+    font-size: 0.36em;
+    color: var(--ember);
+    letter-spacing: 0;
+    transform: translateY(-0.6em);
+  }
+  .what__stat .num .approx { color: var(--ember); margin-right: 4px; }
+  .what__stat .lab {
+    margin-top: 10px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(13,12,10,0.55);
+    line-height: 1.5;
+    max-width: 240px;
+  }
+
+  @media (max-width: 900px) {
+    .what__inner { grid-template-columns: 1fr; gap: 40px; }
+    .what__head { position: static; }
+    .what__stats { grid-template-columns: 1fr; }
+    .what__stat { border-right: 0; border-bottom: 1px solid rgba(13,12,10,0.12); padding-right: 0; }
+    .what__stat:last-child { border-bottom: 0; }
+  }
+
+  /* ===========================================================
+     ORAL HISTORY
+     =========================================================== */
+  .oral {
+    background: var(--ink);
+    color: var(--bone);
+    padding: clamp(96px, 14vh, 180px) clamp(24px, 6vw, 96px);
+    position: relative;
+  }
+  .section-head {
+    max-width: 1280px;
+    margin: 0 auto clamp(48px, 7vh, 96px);
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: clamp(24px, 4vw, 80px);
+    align-items: end;
+  }
+  .section-head .num {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+  }
+  .section-head .h {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(36px, 4.6vw, 64px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin: 14px 0 0;
+  }
+  .section-head .h em { color: var(--solar); font-style: italic; font-weight: 400; font-size: 1.08em; letter-spacing: -0.01em; }
+  .section-head .deck {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(19px, 1.7vw, 24px);
+    line-height: 1.5;
+    color: var(--bone-2);
+    max-width: 56ch;
+    margin: 0;
+  }
+
+  .oral__grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, 4vw, 56px);
+  }
+  @media (max-width: 800px) {
+    .section-head { grid-template-columns: 1fr; }
+    .oral__grid { grid-template-columns: 1fr; }
+  }
+
+  .portrait {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    background: var(--ink-2);
+    isolation: isolate;
+    border: 1px solid var(--rule);
+    transition: border-color .4s ease, transform .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .portrait:hover { border-color: var(--rule-strong); transform: translateY(-4px); }
+
+  .portrait__media {
+    position: relative;
+    aspect-ratio: 4 / 5;
+    overflow: hidden;
+    background: #000;
+  }
+  .portrait__img {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity .8s ease, transform 8s ease;
+    transform: scale(1.02);
+  }
+  .portrait__img.is-active { opacity: 1; transform: scale(1.08); }
+  .portrait:hover .portrait__img.is-active { transform: scale(1.12); }
+
+  .portrait__media::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(13,12,10,0) 40%, rgba(13,12,10,0.92) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .portrait__tag {
+    position: absolute; top: 18px; left: 18px; z-index: 2;
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bone-2);
+    background: rgba(13,12,10,0.55);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 8px 12px;
+    border: 1px solid var(--rule);
+  }
+  .portrait__tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ember); }
+
+  .portrait__play {
+    position: absolute; top: 18px; right: 18px; z-index: 2;
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--rule-strong);
+    background: rgba(13,12,10,0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    display: grid; place-items: center;
+    transition: background .3s ease, transform .3s ease, border-color .3s ease;
+  }
+  .portrait:hover .portrait__play {
+    background: var(--ember);
+    border-color: var(--ember);
+    transform: scale(1.06);
+  }
+  .portrait__play svg { width: 14px; height: 14px; fill: var(--bone); transform: translateX(1px); transition: fill .3s ease; }
+  .portrait:hover .portrait__play svg { fill: var(--ink); }
+
+  .portrait__caption {
+    position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+    padding: 28px clamp(20px, 3vw, 32px) clamp(20px, 3vw, 28px);
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .portrait__name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3.4vw, 44px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--bone);
+    margin: 0;
+    white-space: nowrap;
+  }
+  .portrait__role {
+    margin-top: 8px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+  }
+  .portrait__index {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--bone-3);
+    letter-spacing: 0.18em;
+    flex-shrink: 0;
+  }
+
+  .portrait__meta {
+    padding: 22px clamp(20px, 3vw, 32px) clamp(22px, 3vw, 28px);
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+  }
+  .portrait__meta strong { display: block; color: var(--bone); font-weight: 500; margin-top: 6px; letter-spacing: 0.12em; }
+
+  /* ===========================================================
+     MODAL
+     =========================================================== */
+  .modal {
+    position: fixed; inset: 0;
+    z-index: 100;
+    background: rgba(8,7,6,0.94);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    opacity: 0;
+    pointer-events: none;
+    overflow: hidden;
+    transition: opacity .55s ease;
+  }
+  .modal.is-open { opacity: 1; pointer-events: auto; overflow-y: auto; }
+
+  .modal__close {
+    position: fixed; top: 22px; right: 22px;
+    z-index: 110;
+    width: 48px; height: 48px;
+    border: 1px solid var(--rule-strong);
+    border-radius: 50%;
+    background: rgba(13,12,10,0.6);
+    color: var(--bone);
+    display: grid; place-items: center;
+    opacity: 0; pointer-events: none;
+    transition: background .3s ease, transform .3s ease, border-color .3s ease, opacity .3s ease;
+  }
+  .modal.is-open ~ .modal__close,
+  body:has(.modal.is-open) .modal__close { opacity: 1; pointer-events: auto; }
+  .modal__close:hover { background: var(--ember); border-color: var(--ember); color: var(--ink); transform: rotate(90deg); }
+
+  .modal__inner {
+    max-width: 1380px;
+    margin: 0 auto;
+    padding: clamp(60px, 8vh, 100px) clamp(20px, 4vw, 64px) 120px;
+  }
+
+  .modal__head {
+    display: flex; flex-direction: column;
+    gap: 14px;
+    margin-bottom: clamp(24px, 4vh, 40px);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: clamp(20px, 3vh, 32px);
+  }
+  .modal__eyebrow {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--ember);
+  }
+  .modal__name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(48px, 7vw, 96px);
+    line-height: 0.92;
+    letter-spacing: -0.025em;
+    margin: 0;
+  }
+  .modal__sub {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(19px, 1.7vw, 24px);
+    color: var(--bone-2);
+    max-width: 60ch;
+    margin: 0;
+  }
+
+  .modal__video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+    border: 1px solid var(--rule);
+    margin-bottom: clamp(48px, 7vh, 80px);
+    overflow: hidden;
+  }
+  .modal__video iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .modal__video__placeholder {
+    width: 100%; height: 100%;
+    display: grid; place-items: center;
+    background:
+      linear-gradient(135deg, rgba(13,12,10,0.6), rgba(13,12,10,0.9)),
+      var(--ink-2);
+    color: var(--bone-3);
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.6;
+    position: relative;
+  }
+  .modal__video__placeholder::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-image: var(--bg);
+    opacity: 0.45;
+    z-index: 0;
+  }
+  .modal__video__placeholder > * { position: relative; z-index: 1; }
+  .modal__video__placeholder .play {
+    width: 76px; height: 76px;
+    border: 1px solid var(--bone);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    margin-bottom: 18px;
+    transition: background .3s ease, color .3s ease;
+  }
+  .modal__video__placeholder:hover .play { background: var(--ember); border-color: var(--ember); }
+  .modal__video__placeholder .play svg { width: 18px; height: 18px; fill: var(--bone); transform: translateX(2px); }
+  .modal__video__placeholder:hover .play svg { fill: var(--ink); }
+
+  .filmstrip {
+    margin-bottom: clamp(48px, 7vh, 80px);
+  }
+  .filmstrip__head {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 22px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .filmstrip__head h3 {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(22px, 2.4vw, 32px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    margin: 0;
+  }
+  .filmstrip__head .meta {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+  }
+
+  .filmstrip__rail {
+    display: flex;
+    gap: 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 8px 4px 24px;
+    scroll-snap-type: x proximity;
+    scrollbar-width: thin;
+    scrollbar-color: var(--ember) transparent;
+  }
+  .filmstrip__rail::-webkit-scrollbar { height: 6px; }
+  .filmstrip__rail::-webkit-scrollbar-track { background: var(--rule); }
+  .filmstrip__rail::-webkit-scrollbar-thumb { background: var(--ember); }
+
+  .filmstrip__cell {
+    flex: 0 0 auto;
+    width: clamp(280px, 36vw, 460px);
+    aspect-ratio: 16 / 9;
+    background-size: cover;
+    background-position: center;
+    background-color: var(--ink-2);
+    border: 1px solid var(--rule);
+    scroll-snap-align: start;
+    position: relative;
+    transition: transform .5s cubic-bezier(.2,.7,.2,1), border-color .3s ease;
+  }
+  .filmstrip__cell:hover { transform: translateY(-4px); border-color: var(--rule-strong); }
+  .filmstrip__cell::after {
+    content: attr(data-num);
+    position: absolute;
+    top: 10px; left: 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--bone);
+    background: rgba(13,12,10,0.7);
+    padding: 4px 8px;
+  }
+  .filmstrip--bts .filmstrip__cell { aspect-ratio: 3 / 4; width: clamp(220px, 26vw, 340px); }
+
+  /* ===========================================================
+     TESTIMONIES (YouTube grid)
+     =========================================================== */
+  .testimonies {
+    background: var(--ink-2);
+    color: var(--bone);
+    padding: clamp(96px, 14vh, 180px) clamp(24px, 6vw, 96px);
+  }
+  .testimonies__grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-auto-rows: auto;
+    gap: clamp(20px, 2.5vw, 32px);
+  }
+  .testimonies__grid > .vid:first-child {
+    grid-row: span 2;
+  }
+  @media (max-width: 900px) {
+    .testimonies__grid { grid-template-columns: 1fr; }
+    .testimonies__grid > .vid:first-child { grid-row: auto; }
+  }
+  .vid {
+    position: relative;
+    background: var(--ink);
+    border: 1px solid var(--rule);
+    overflow: hidden;
+  }
+  .vid__frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: #000;
+  }
+  .vid__frame iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+  /* Click-to-play poster — covers the iframe area, fades out on activation.
+     When data-yt is empty, the poster is in "embed pending" state — no play button. */
+  .vid__poster {
+    position: absolute; inset: 0;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    transition: opacity .35s ease;
+    z-index: 2;
+  }
+  .vid__poster[data-yt=""] { cursor: default; }
+  .vid__poster::after {
+    content: "";
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(180deg, rgba(13,12,10,0.0) 30%, rgba(13,12,10,0.7) 100%),
+      radial-gradient(ellipse at center, rgba(13,12,10,0.0) 30%, rgba(13,12,10,0.55) 100%);
+  }
+  .vid__poster.is-played { opacity: 0; pointer-events: none; }
+
+  .vid__play {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(56px, 7vw, 84px);
+    height: clamp(56px, 7vw, 84px);
+    border-radius: 999px;
+    background: rgba(217,119,87,0.92);
+    display: grid; place-items: center;
+    z-index: 2;
+    transition: transform .25s ease, background .25s ease;
+  }
+  .vid__poster[data-yt=""] .vid__play { display: none; }
+  .vid__poster:hover .vid__play { transform: translate(-50%, -50%) scale(1.06); background: var(--ember); }
+  .vid__play::before {
+    content: "";
+    width: 0; height: 0;
+    border-left: 14px solid var(--bone);
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+    margin-left: 4px;
+  }
+
+  /* Embed pending — replaces play button when no ID is set */
+  .vid__pending {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    text-align: center;
+    color: var(--bone);
+    pointer-events: none;
+    width: min(80%, 320px);
+  }
+  .vid__poster[data-yt]:not([data-yt=""]) .vid__pending { display: none; }
+  .vid__pending__mark {
+    width: 56px; height: 56px;
+    margin: 0 auto 14px;
+    border: 1px solid rgba(245,239,224,0.35);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    color: var(--bone);
+    background: rgba(13,12,10,0.32);
+    backdrop-filter: blur(6px);
+  }
+  .vid__pending__mark::before {
+    content: "";
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--ember);
+    box-shadow: 0 0 0 6px rgba(217,119,87,0.18);
+  }
+  .vid__pending__lab {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.3;
+    color: var(--bone);
+    margin: 0;
+  }
+
+  .vid__poster__hint {
+    position: absolute;
+    left: 22px; bottom: 18px;
+    z-index: 2;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(245,239,224,0.78);
+  }
+
+  .vid__caption {
+    padding: 18px 22px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+  }
+  .vid__caption strong { color: var(--bone); font-weight: 500; letter-spacing: 0.14em; }
+
+  /* ===========================================================
+     WHAT — paired terms (tactile epistemology / haptic visuality)
+     =========================================================== */
+  .what__pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(28px, 4vw, 64px);
+    margin-top: clamp(48px, 7vh, 88px);
+    padding-top: clamp(28px, 4vh, 48px);
+    border-top: 1px solid rgba(13,12,10,0.16);
+  }
+  @media (max-width: 720px) { .what__pair { grid-template-columns: 1fr; gap: 36px; } }
+  .what__term { display: flex; flex-direction: column; gap: 14px; }
+  .what__term-label {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: rgba(13,12,10,0.55);
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(13,12,10,0.16);
+  }
+  .what__term-body {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(17px, 1.5vw, 22px);
+    line-height: 1.5;
+    color: var(--ink);
+    text-wrap: pretty;
+  }
+  .what__term-body em { font-style: italic; color: var(--ember); }
+  .what__term-cite {
+    margin: 0;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+  }
+
+  /* ===========================================================
+     MULTIMEDIA TESTIMONIALS — open shelf
+     =========================================================== */
+  .media {
+    background: var(--ink-2);
+    color: var(--bone);
+    padding: clamp(96px, 14vh, 180px) clamp(24px, 6vw, 96px);
+    position: relative;
+  }
+  .media__grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2vw, 28px);
+  }
+  @media (max-width: 900px) { .media__grid { grid-template-columns: 1fr; } }
+
+  .mtile {
+    position: relative;
+    display: flex; flex-direction: column;
+    background: var(--ink-3);
+    border: 1px solid var(--rule);
+    text-decoration: none;
+    color: inherit;
+    overflow: hidden;
+    transition: border-color .35s ease, transform .5s cubic-bezier(.2,.7,.2,1), background .35s ease;
+    isolation: isolate;
+  }
+  .mtile.mtile--active { cursor: pointer; }
+  .mtile.mtile--active:hover { border-color: var(--rule-strong); transform: translateY(-3px); background: var(--ink-2); }
+  .mtile.mtile--soon { cursor: default; }
+  .mtile.mtile--soon::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(135deg, transparent 0 11px, rgba(236,228,210,0.025) 11px 12px);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .mtile__corner {
+    position: absolute; top: 14px; left: 14px;
+    z-index: 4;
+    display: flex; align-items: center; gap: 10px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bone-2);
+  }
+  .mtile__num {
+    background: rgba(13,12,10,0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 5px 8px;
+    border: 1px solid var(--rule);
+  }
+  .mtile__kind {
+    color: var(--bone-3);
+  }
+  .mtile__strip {
+    position: relative;
+    aspect-ratio: 16 / 11;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background: var(--ink);
+    overflow: hidden;
+    z-index: 2;
+  }
+  .mtile__strip > div {
+    background-size: cover;
+    background-position: center;
+    filter: saturate(0.92) contrast(1.05);
+    transition: transform 1.6s cubic-bezier(.2,.7,.2,1), filter .5s ease;
+  }
+  .mtile.mtile--active:hover .mtile__strip > div { transform: scale(1.06); filter: saturate(1.05) contrast(1.08); }
+  .mtile__strip--empty { display: block; }
+  .mtile__placeholder {
+    width: 100%; height: 100%;
+    background:
+      radial-gradient(ellipse at 30% 60%, rgba(236,228,210,0.06), transparent 60%),
+      radial-gradient(ellipse at 70% 30%, rgba(236,228,210,0.04), transparent 60%),
+      var(--ink);
+    position: relative;
+  }
+  .mtile__placeholder::after {
+    content: "Forthcoming";
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+    border: 1px dashed var(--rule-strong);
+    padding: 8px 16px;
+  }
+  .mtile__placeholder--audio::after { content: "Forthcoming · Audio"; }
+  .mtile__placeholder .wave {
+    position: absolute; left: 0; right: 0; bottom: 0;
+    height: 50%;
+    background:
+      repeating-linear-gradient(90deg,
+        rgba(236,228,210,0.18) 0 1px, transparent 1px 6px),
+      repeating-linear-gradient(90deg,
+        rgba(236,228,210,0.08) 0 1px, transparent 1px 3px);
+    mask-image: linear-gradient(180deg, transparent, black 30%, black 70%, transparent);
+    -webkit-mask-image: linear-gradient(180deg, transparent, black 30%, black 70%, transparent);
+    opacity: 0.9;
+  }
+  .mtile__body {
+    position: relative;
+    z-index: 3;
+    padding: clamp(22px, 2.4vw, 32px);
+    display: flex; flex-direction: column; gap: 14px;
+    flex: 1;
+  }
+  .mtile__medium {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+    margin-bottom: 8px;
+  }
+  .mtile__name {
+    margin: 0;
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3vw, 40px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--bone);
+  }
+  .mtile__name em { color: var(--solar); font-style: italic; }
+  .mtile__sub {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(15px, 1.2vw, 17px);
+    line-height: 1.5;
+    color: var(--bone-2);
+    text-wrap: pretty;
+  }
+  .mtile__sub em { font-style: italic; color: var(--bone-3); }
+  .mtile__cta {
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--bone);
+    padding-top: 18px;
+    border-top: 1px solid var(--rule);
+    transition: color .25s ease, gap .25s ease;
+  }
+  .mtile.mtile--active:hover .mtile__cta { color: var(--ember); gap: 18px; }
+  .mtile__cta .arrow { transition: transform .35s cubic-bezier(.2,.7,.2,1); }
+  .mtile.mtile--active:hover .mtile__cta .arrow { transform: translateX(4px); }
+  .mtile__cta--soon { color: var(--bone-3); }
+
+  /* ===========================================================
+     EXTERNAL ARCHIVE — link list
+     =========================================================== */
+  .external {
+    background: var(--ink);
+    color: var(--bone);
+    padding: clamp(96px, 14vh, 180px) clamp(24px, 6vw, 96px) clamp(80px, 12vh, 140px);
+    position: relative;
+  }
+  .external__list {
+    list-style: none;
+    margin: 0; padding: 0;
+    max-width: 1280px;
+    margin-left: auto; margin-right: auto;
+    border-top: 1px solid var(--rule);
+  }
+  .ext { border-bottom: 1px solid var(--rule); }
+  .ext__row {
+    display: grid;
+    grid-template-columns: 64px 1fr 160px 32px;
+    align-items: center;
+    gap: clamp(12px, 2vw, 32px);
+    padding: clamp(22px, 3vw, 36px) clamp(8px, 1.5vw, 18px);
+    text-decoration: none;
+    color: inherit;
+    transition: background .35s ease, padding .35s ease;
+  }
+  .ext__row:hover { background: rgba(236,228,210,0.04); }
+  @media (max-width: 880px) {
+    .ext__row {
+      grid-template-columns: 48px 1fr 32px;
+      grid-template-areas:
+        "num title arrow"
+        "num source arrow";
+      gap: 4px 16px;
+      row-gap: 6px;
+      padding: 22px 8px;
+    }
+    .ext__num { grid-area: num; align-self: start; padding-top: 4px; }
+    .ext__title { grid-area: title; }
+    .ext__source { grid-area: source; }
+    .ext__arrow { grid-area: arrow; }
+  }
+  .ext__num {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--bone-3);
+  }
+  .ext__kind {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+  }
+  .ext__title {
+    font-family: var(--serif);
+    font-size: clamp(20px, 2vw, 30px);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    color: var(--bone);
+  }
+  .ext__source {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+    text-align: right;
+  }
+  @media (max-width: 880px) { .ext__source { text-align: left; } }
+  .ext__arrow {
+    font-size: 22px;
+    color: var(--bone-3);
+    text-align: right;
+    transition: transform .3s cubic-bezier(.2,.7,.2,1), color .25s ease;
+  }
+  .ext__row:hover .ext__arrow { color: var(--ember); transform: translate(4px, -4px); }
+
+  /* ===========================================================
+     LUZ ESCOBAR — masonry parallax
+     =========================================================== */
+  .luz {
+    background: var(--bone);
+    color: var(--ink);
+    padding: clamp(96px, 14vh, 180px) clamp(24px, 6vw, 96px);
+    overflow: hidden;
+  }
+  .luz .section-head { color: var(--ink); }
+  .luz .section-head .num,
+  .luz .section-head .deck { color: rgba(13,12,10,0.62); }
+  .luz .section-head .h em { color: var(--ember); }
+
+  .luz__grid {
+    max-width: 1280px;
+    margin: 0 auto;
+    column-count: 3;
+    column-gap: clamp(14px, 2vw, 24px);
+  }
+  @media (max-width: 900px) { .luz__grid { column-count: 2; } }
+  @media (max-width: 560px) { .luz__grid { column-count: 1; } }
+
+  .luz__cell {
+    break-inside: avoid;
+    margin-bottom: clamp(14px, 2vw, 24px);
+    background: rgba(13,12,10,0.05);
+    overflow: hidden;
+    position: relative;
+    transition: transform .6s cubic-bezier(.2,.7,.2,1);
+    will-change: transform;
+  }
+  .luz__cell img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 1.2s cubic-bezier(.2,.7,.2,1), filter .6s ease;
+    filter: saturate(0.95) contrast(1.02);
+  }
+  .luz__cell:hover img { transform: scale(1.04); filter: saturate(1.1) contrast(1.05); }
+  .luz__cell::after {
+    content: attr(data-num);
+    position: absolute; top: 10px; left: 12px;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--bone);
+    background: rgba(13,12,10,0.5);
+    padding: 4px 8px;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: opacity .3s ease;
+  }
+  .luz__cell:hover::after { opacity: 1; }
+
+  /* ===========================================================
+     FOOTER — landscape-anchored
+     =========================================================== */
+  .foot {
+    position: relative;
+    background: var(--ink-2);
+    color: var(--bone);
+    overflow: hidden;
+    padding-top: 0;
+  }
+  .foot__skyline {
+    position: relative;
+    height: clamp(180px, 26vh, 320px);
+    background-image: var(--bg);
+    background-size: cover;
+    background-position: center bottom;
+    margin-top: 60px;
+  }
+  .foot__skyline::before {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, var(--ink) 0%, rgba(13,12,10,0.2) 25%, rgba(13,12,10,0.7) 100%);
+    z-index: 1;
+  }
+  .foot__head {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 clamp(24px, 6vw, 96px);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: end;
+    gap: 40px;
+  }
+  @media (max-width: 720px) { .foot__head { grid-template-columns: 1fr; } }
+  .foot__title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(38px, 5.4vw, 80px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin: 0;
+  }
+  .foot__title em { color: var(--solar); font-style: italic; font-weight: 400; font-size: 1.08em; }
+  .foot__lede {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(18px, 1.5vw, 22px);
+    color: var(--bone-2);
+    margin: 0;
+    max-width: 44ch;
+  }
+
+  .foot__meta {
+    position: relative;
+    z-index: 2;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 28px clamp(24px, 6vw, 96px) 32px;
+    border-top: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    gap: 20px;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--bone-3);
+    background: transparent;
+  }
+  .foot__meta .center { text-align: center; }
+  .foot__meta .right { text-align: right; }
+  @media (max-width: 720px) {
+    .foot__meta { grid-template-columns: 1fr; text-align: left; }
+    .foot__meta .center, .foot__meta .right { text-align: left; }
+  }
+
+  /* ===========================================================
+     UTILITIES
+     =========================================================== */
+  .reveal { opacity: 0; transform: translateY(28px); transition: opacity 1s ease, transform 1s cubic-bezier(.2,.7,.2,1); }
+  .reveal.is-in { opacity: 1; transform: none; }
+
+  /* Site-wide grain tied to --air */
+  .site-grain {
+    position: fixed; inset: 0;
+    pointer-events: none;
+    z-index: 60;
+    opacity: calc(0.06 * var(--air));
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.4' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.9  0 0 0 0 0.85  0 0 0 0 0.8  0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    transition: opacity .6s ease;
+  }
+</style>
+</head>
+<body>
+<div class="site-grain" aria-hidden="true"></div>
+
+<!-- =========== PERSISTENT CHROME =========== -->
+<div class="chrome-top" data-screen-label="Header">
+  <div class="left">Cancer Alley<br/><span style="opacity:.55">A Sensorial Archive</span></div>
+  <div class="center"></div>
+  <div class="right">30°N · 91°W<br/><span style="opacity:.55">Louisiana</span></div>
+</div>
+
+<div class="chrome-bottom">
+  <div class="left">Index 01–06</div>
+  <div class="center">
+    <a href="#what">What</a>
+    <a href="#oral">Voices</a>
+    <a href="#media">Media</a>
+    <a href="#external">Archive</a>
+  </div>
+  <div class="right chrome-scroll-hint"><span class="scroll-down">Scroll ↓</span></div>
+</div>
+
+<button type="button" class="back-to-top" aria-label="Back to top">
+  <svg viewBox="0 0 12 8" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1 6L6 1L11 6"/></svg>
+</button>
+
+<!-- =========== HERO =========== -->
+<section class="hero" data-screen-label="01 Hero">
+  <div class="hero__stage" id="hero-stage">
+    <div class="hero__slide is-active" style="background-image:url('images/Hero/HERO-01.JPG')"></div>
+    <div class="hero__slide" style="background-image:url('images/Hero/HERO-02.JPG')"></div>
+    <div class="hero__slide" style="background-image:url('images/Hero/HERO-03.JPG')"></div>
+  </div>
+  <div class="hero__veil"></div>
+  <div class="hero__grain"></div>
+
+  <div class="hero__edge">Louisiana</div>
+
+  <div class="hero__content">
+    <div style="grid-column:1;grid-row:1;"></div>
+    <div class="hero__title-row" style="grid-column:1;grid-row:2;align-self:end;">
+      <div class="hero__kicker">
+        <span class="dot"></span>
+        <span>A Sensorial Archive</span>
+      </div>
+      <h1 class="hero__title">
+        <span class="word w1"><span>Cancer</span></span>
+        <span class="word w2"><span><em>Alley</em></span></span>
+      </h1>
+    </div>
+  </div>
+
+  <div class="hero__scroll">
+    <span>Scroll</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- =========== WHAT IS =========== -->
+<section class="what" id="what" data-screen-label="02 What Is">
+  <div class="what__inner">
+    <header class="what__head reveal">
+      <h2 class="what__h">A corridor of <em>two hundred</em> plants.</h2>
+      <div class="what__rule"></div>
+    </header>
+
+    <div class="what__body">
+      <p class="what__lede reveal">
+        <span class="dropcap">O</span>n an 85-mile stretch of the Mississippi River between New Orleans and Baton Rouge, communities exist alongside some 200 fossil fuel and petrochemical production plants. Residents of these communities suffer the effects of extreme air pollution, including increased rates and risks of <mark>maternal, reproductive, and newborn health harms</mark>; respiratory illnesses; and cancer. One area has the highest risk of cancer from industrial air pollution in the U.S. — <mark>more than seven times the national average.</mark>
+      </p>
+      <p class="what__cite reveal">Johns Hopkins Bloomberg School of Public Health</p>
+
+      <div class="what__pair reveal">
+        <div class="what__term">
+          <span class="what__term-label">Tactile epistemology</span>
+          <p class="what__term-body">“Tactile epistemology involves thinking with your skin, or giving as much significance to the physical presence of an other as to the mental operations of symbolization.”</p>
+          <p class="what__term-cite"><em>The Skin of the Film</em></p>
+        </div>
+        <div class="what__term">
+          <span class="what__term-label">Haptic visuality</span>
+          <p class="what__term-body">Haptic visuality implies a tension between viewer and image—this violent potential is always there. It implies making oneself vulnerable to the image, reversing the relation of mastery that characterizes optical viewing.</p>
+          <p class="what__term-cite"><em>The Skin of the Film</em></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========== ORAL HISTORIES =========== -->
+<section class="oral" id="oral" data-screen-label="03 Oral Histories">
+  <header class="section-head">
+    <div>
+      <h2 class="h">Oral <em>Histories.</em></h2>
+    </div>
+  </header>
+
+  <div class="oral__grid">
+    <article class="portrait reveal" data-portrait="indira" tabindex="0" aria-label="Open Indira's oral history">
+      <div class="portrait__media">
+        <div class="portrait__img is-active" style="background-image:url('images/indira/stills/IND-FS-14.jpeg')"></div>
+        <div class="portrait__img" style="background-image:url('images/indira/stills/IND-FS-12.jpeg')"></div>
+        <div class="portrait__img" style="background-image:url('images/indira/stills/IND-FS-04.jpeg')"></div>
+        <div class="portrait__tag"><span class="dot"></span>Filmed Testimony</div>
+        <div class="portrait__play" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0L12 7L0 14Z"/></svg></div>
+        <div class="portrait__caption">
+          <div>
+            <h3 class="portrait__name">Indira Escobar-Zapata</h3>
+          </div>
+          <div class="portrait__index">I / II</div>
+        </div>
+      </div>
+      <div class="portrait__meta">
+        <div>Runtime<strong>14:32</strong></div>
+        <div>Stills<strong>16</strong></div>
+        <div>Photographs<strong>07</strong></div>
+      </div>
+    </article>
+
+    <article class="portrait reveal" data-portrait="keva" tabindex="0" aria-label="Open Keva's oral history">
+      <div class="portrait__media">
+        <div class="portrait__img is-active" style="background-image:url('images/keva/stills/KEV-FS-04.jpeg')"></div>
+        <div class="portrait__img" style="background-image:url('images/keva/stills/KEV-FS-09.jpeg')"></div>
+        <div class="portrait__img" style="background-image:url('images/keva/stills/KEV-FS-01.jpeg')"></div>
+        <div class="portrait__tag"><span class="dot"></span>Filmed Testimony</div>
+        <div class="portrait__play" aria-hidden="true"><svg viewBox="0 0 12 14"><path d="M0 0L12 7L0 14Z"/></svg></div>
+        <div class="portrait__caption">
+          <div>
+            <h3 class="portrait__name">Keva Peters Jr.</h3>
+          </div>
+          <div class="portrait__index">II / II</div>
+        </div>
+      </div>
+      <div class="portrait__meta">
+        <div>Runtime<strong>11:48</strong></div>
+        <div>Stills<strong>13</strong></div>
+        <div>Photographs<strong>11</strong></div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- =========== MULTIMEDIA TESTIMONIALS =========== -->
+<section class="media" id="media" data-screen-label="04 Multimedia Testimonials">
+  <header class="section-head" style="max-width:1280px;margin:0 auto clamp(48px,7vh,96px)">
+    <div>
+      <h2 class="h">Multimedia <em>Testimonials.</em></h2>
+    </div>
+  </header>
+
+  <div class="media__grid" role="list">
+    <div class="mtile mtile--active reveal" role="listitem" tabindex="0" data-media="luz" aria-label="Open: Photography by Luz Escobar-Zapata" style="cursor:pointer;">
+      <div class="mtile__corner">
+        <span class="mtile__num">01</span>
+        <span class="mtile__kind">Photography</span>
+      </div>
+      <div class="mtile__strip" aria-hidden="true">
+        <div style="background-image:url('images/artists/luz-escobar/LUZ-13.JPG')"></div>
+        <div style="background-image:url('images/artists/luz-escobar/LUZ-10.JPG')"></div>
+        <div style="background-image:url('images/artists/luz-escobar/LUZ-05.JPG')"></div>
+        <div style="background-image:url('images/artists/luz-escobar/LUZ-02.jpeg')"></div>
+      </div>
+      <div class="mtile__body">
+        <div class="mtile__medium">Photography</div>
+        <h3 class="mtile__name">Luz Escobar<br/><em>—Zapata</em></h3>
+        <div class="mtile__cta"><span>Open Gallery</span><span class="arrow">→</span></div>
+      </div>
+    </div>
+
+    <div class="mtile mtile--soon reveal" role="listitem" tabindex="0" data-media="video" style="cursor:pointer;" aria-label="Open: Video testimonials">
+      <div class="mtile__corner">
+        <span class="mtile__num">02</span>
+        <span class="mtile__kind">Video</span>
+      </div>
+      <div class="mtile__strip mtile__strip--empty" aria-hidden="true">
+        <div class="mtile__placeholder"></div>
+      </div>
+      <div class="mtile__body">
+        <h3 class="mtile__name">Video</h3>
+        <div class="mtile__cta mtile__cta--soon"><span>Forthcoming</span></div>
+      </div>
+    </div>
+
+    <div class="mtile mtile--soon reveal" role="listitem" tabindex="0" data-media="podcast" style="cursor:pointer;" aria-label="Open: Podcast testimonials">
+      <div class="mtile__corner">
+        <span class="mtile__num">03</span>
+        <span class="mtile__kind">Podcast</span>
+      </div>
+      <div class="mtile__strip mtile__strip--empty" aria-hidden="true">
+        <div class="mtile__placeholder mtile__placeholder--audio">
+          <div class="wave"></div>
+        </div>
+      </div>
+      <div class="mtile__body">
+        <h3 class="mtile__name">Podcast</h3>
+        <div class="mtile__cta mtile__cta--soon"><span>Forthcoming</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- =========== EXTERNAL ARCHIVE =========== -->
+<section class="external" id="external" data-screen-label="05 External Archive">
+  <header class="section-head" style="max-width:1280px;margin:0 auto clamp(48px,7vh,96px)">
+    <div>
+      <h2 class="h" style="white-space:nowrap;">External <em>Archive.</em></h2>
+    </div>
+  </header>
+
+  <ul class="external__list" role="list">
+    <li class="ext reveal">
+      <a class="ext__row" href="https://www.youtube.com/watch?v=-IAoNhl2mtU" target="_blank" rel="noopener noreferrer">
+        <span class="ext__num">01</span>
+        <span class="ext__title">Louisiana's 'Cancer Alley' Residents Suffer Harms from Fossil Fuel and Petrochemical Industry</span>
+        <span class="ext__source">Human Rights Watch</span>
+        <span class="ext__arrow">↗</span>
+      </a>
+    </li>
+    <li class="ext reveal">
+      <a class="ext__row" href="https://www.youtube.com/watch?v=aCT6BO7wlDs" target="_blank" rel="noopener noreferrer">
+        <span class="ext__num">02</span>
+        <span class="ext__title">What It's Like to Live in Cancer Alley</span>
+        <span class="ext__source">NowThis</span>
+        <span class="ext__arrow">↗</span>
+      </a>
+    </li>
+    <li class="ext reveal">
+      <a class="ext__row" href="https://www.youtube.com/watch?v=WBjKnj7hKek" target="_blank" rel="noopener noreferrer">
+        <span class="ext__num">03</span>
+        <span class="ext__title">How Industrialization Created Louisiana’s Cancer Alley</span>
+        <span class="ext__source">Health Geography Hub</span>
+        <span class="ext__arrow">↗</span>
+      </a>
+    </li>
+  </ul>
+</section>
+
+<!-- =========== FOOTER =========== -->
+<footer class="foot" data-screen-label="Footer">
+  <div class="foot__meta">
+    <div class="left">© 2026 · A Sensorial Archive</div>
+    <div class="center"></div>
+    <div class="right">An archive by Indira Escobar-Zapata</div>
+  </div>
+</footer>
+
+<!-- =========== MODAL =========== -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
+  <button class="modal__close" id="modal-close" aria-label="Close">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M2 2L14 14M14 2L2 14"/></svg>
+  </button>
+  <div class="modal__inner" id="modal-inner"></div>
+</div>
+
+<script>
+  /* ============= Past-hero chrome dimming ============= */
+  (function () {
+    const hero = document.querySelector('.hero');
+    if (!hero) return;
+    function update() {
+      const heroBottom = hero.getBoundingClientRect().bottom;
+      document.body.classList.toggle('is-past-hero', heroBottom < 80);
+      const dh = document.documentElement;
+      const nearBottom = (window.innerHeight + window.scrollY) >= dh.scrollHeight - 240;
+      document.body.classList.toggle('is-near-bottom', nearBottom);
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+
+    const upBtn = document.querySelector('.back-to-top');
+    if (upBtn) {
+      upBtn.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  })();
+
+  /* ============= Hero crossfade ============= */
+  (function () {
+    const slides = document.querySelectorAll('#hero-stage .hero__slide');
+    let i = 0;
+    setInterval(() => {
+      slides[i].classList.remove('is-active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('is-active');
+    }, 5400);
+  })();
+
+  /* ============= Reveal on scroll ============= */
+  (function () {
+    const els = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('is-in');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+    window.__revealObserver = io;
+  })();
+
+  /* ============= Counter on enter ============= */
+  (function () {
+    const counters = document.querySelectorAll('[data-count]');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        const el = e.target;
+        const target = parseInt(el.dataset.count, 10);
+        const dur = 1400;
+        const start = performance.now();
+        function tick(now) {
+          const t = Math.min(1, (now - start) / dur);
+          const eased = 1 - Math.pow(1 - t, 3);
+          el.textContent = Math.round(target * eased);
+          if (t < 1) requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+        io.unobserve(el);
+      });
+    }, { threshold: 0.4 });
+    counters.forEach(el => io.observe(el));
+  })();
+
+  /* ============= Portrait card filmstrip hover ============= */
+  (function () {
+    document.querySelectorAll('.portrait').forEach(card => {
+      const imgs = card.querySelectorAll('.portrait__img');
+      let timer = null;
+      let idx = 0;
+      function start() {
+        if (imgs.length < 2) return;
+        timer = setInterval(() => {
+          imgs[idx].classList.remove('is-active');
+          idx = (idx + 1) % imgs.length;
+          imgs[idx].classList.add('is-active');
+        }, 1400);
+      }
+      function stop() {
+        clearInterval(timer);
+        imgs.forEach(im => im.classList.remove('is-active'));
+        idx = 0;
+        imgs[0].classList.add('is-active');
+      }
+      card.addEventListener('mouseenter', start);
+      card.addEventListener('mouseleave', stop);
+    });
+  })();
+
+  /* ============= Modal data ============= */
+  const MEDIA = {
+    luz: {
+      eyebrow: "Photography · Multimedia Testimonials",
+      name: "Luz Escobar&#8209;Zapata",
+      sub: "",
+      photos: [
+        'images/artists/luz-escobar/LUZ-01.jpeg',
+        'images/artists/luz-escobar/LUZ-02.jpeg',
+        'images/artists/luz-escobar/LUZ-03.jpeg',
+        'images/artists/luz-escobar/LUZ-04.JPG',
+        'images/artists/luz-escobar/LUZ-05.JPG',
+        'images/artists/luz-escobar/LUZ-06.JPG',
+        'images/artists/luz-escobar/LUZ-07.JPG',
+        'images/artists/luz-escobar/LUZ-08.JPG',
+        'images/artists/luz-escobar/LUZ-09.JPG',
+        'images/artists/luz-escobar/LUZ-10.JPG',
+        'images/artists/luz-escobar/LUZ-11.JPG',
+        'images/artists/luz-escobar/LUZ-12.JPG',
+        'images/artists/luz-escobar/LUZ-13.JPG',
+        'images/artists/luz-escobar/LUZ-14.JPG',
+        'images/artists/luz-escobar/LUZ-15.JPG',
+        'images/artists/luz-escobar/LUZ-16.JPG',
+      ]
+    },
+    video: {
+      eyebrow: "Video · Multimedia Testimonials",
+      name: "Video",
+      sub: "Filmed testimony from residents of Cancer Alley.",
+      forthcoming: true
+    },
+    podcast: {
+      eyebrow: "Podcast · Multimedia Testimonials",
+      name: "Podcast",
+      sub: "Audio testimony from residents of Cancer Alley.",
+      forthcoming: true
+    }
+  };
+
+  const ORAL = {
+    indira: {
+      eyebrow: "Oral History",
+      name: "Indira Escobar-Zapata",
+      sub: "",
+      youtubeId: null,
+      poster: "images/indira/stills/IND-FS-14.jpeg",
+      stills: Array.from({length:16}, (_,i) => `images/indira/stills/IND-FS-${String(i+1).padStart(2,'0')}.jpeg`),
+      bts:    Array.from({length:7},  (_,i) => `images/indira/bts/IND-BTS-${String(i+1).padStart(2,'0')}.jpeg`)
+    },
+    keva: {
+      eyebrow: "Oral History",
+      name: "Keva Peters Jr.",
+      sub: "",
+      youtubeId: null,
+      poster: "images/keva/stills/KEV-FS-04.jpeg",
+      stills: Array.from({length:13}, (_,i) => `images/keva/stills/KEV-FS-${String(i+1).padStart(2,'0')}.jpeg`),
+      bts:    Array.from({length:11}, (_,i) => `images/keva/bts/KEV-BTS-${String(i+1).padStart(2,'0')}.jpeg`)
+    }
+  };
+
+  const modal = document.getElementById('modal');
+  const modalInner = document.getElementById('modal-inner');
+  const modalClose = document.getElementById('modal-close');
+
+  function openModal(key) {
+    const data = ORAL[key] || MEDIA[key];
+    if (!data) return;
+
+    /* ---- MEDIA modal (Luz photos / forthcoming tiles) ---- */
+    if (MEDIA[key]) {
+      if (data.forthcoming) {
+        modalInner.innerHTML = `
+          <header class="modal__head">
+            <div class="modal__eyebrow">${data.eyebrow}</div>
+            <h2 class="modal__name">${data.name}</h2>
+            ${data.sub ? `<p class="modal__sub">${data.sub}</p>` : ''}
+          </header>
+          <div class="modal__video">
+            <div class="modal__video__placeholder" style="--bg:url('')">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center;">
+                <div style="font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--bone-3);">Forthcoming</div>
+                <div style="font-family:var(--serif);font-size:clamp(22px,3vw,40px);color:var(--bone);">${data.name}</div>
+                <div style="font-family:var(--mono);font-size:12px;color:var(--bone-3);max-width:480px;">${data.sub}</div>
+              </div>
+            </div>
+          </div>
+        `;
+      } else {
+        const LUZ_FILES = [
+          'LUZ-13.JPG','LUZ-08.JPG','LUZ-04.JPG','LUZ-10.JPG',
+          'LUZ-06.JPG','LUZ-11.JPG','LUZ-05.JPG','LUZ-14.JPG',
+          'LUZ-02.jpeg','LUZ-09.JPG','LUZ-07.JPG','LUZ-12.JPG',
+          'LUZ-15.JPG','LUZ-03.jpeg','LUZ-16.JPG','LUZ-01.jpeg'
+        ];
+        const masonryCells = LUZ_FILES.map((f, i) =>
+          `<figure class="luz__cell" data-num="${String(i+1).padStart(2,'0')} · LUZ" style="break-inside:avoid;margin:0 0 clamp(14px,2vw,24px);">
+            <img src="images/artists/luz-escobar/${f}" alt="Photograph ${i+1} by Luz Escobar-Zapata" loading="lazy" style="width:100%;display:block;" />
+          </figure>`
+        ).join('');
+        modalInner.innerHTML = `
+          <header class="modal__head">
+            <div class="modal__eyebrow">${data.eyebrow}</div>
+            <h2 class="modal__name">${data.name}</h2>
+          </header>
+          <div style="column-count:3;column-gap:clamp(14px,2vw,24px);margin-top:clamp(32px,5vh,64px);">
+            ${masonryCells}
+          </div>
+        `;
+      }
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+      return;
+    }
+
+    /* ---- ORAL modal (Indira / Keva) ---- */
+
+    const videoBlock = data.youtubeId
+      ? `<div class="modal__video"><iframe src="https://www.youtube.com/embed/${data.youtubeId}?rel=0&modestbranding=1" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>`
+      : `<div class="modal__video">
+           <div class="modal__video__placeholder" style="--bg:url('${data.poster}')">
+             <div class="play"><svg viewBox="0 0 12 14"><path d="M0 0L12 7L0 14Z"/></svg></div>
+             <div>Filmed Testimony · ${data.name}<br/><span style="opacity:.6">Embed video here</span></div>
+           </div>
+         </div>`;
+
+    const stillsRail = data.stills.map((src, i) =>
+      `<div class="filmstrip__cell" data-num="ST-${String(i+1).padStart(2,'0')}" style="background-image:url('${src}')"></div>`
+    ).join('');
+
+    const btsRail = data.bts.map((src, i) =>
+      `<div class="filmstrip__cell" data-num="BTS-${String(i+1).padStart(2,'0')}" style="background-image:url('${src}')"></div>`
+    ).join('');
+
+    modalInner.innerHTML = `
+      <header class="modal__head">
+        <div class="modal__eyebrow">${data.eyebrow}</div>
+        <h2 class="modal__name">${data.name}</h2>
+        ${data.sub ? `<p class="modal__sub">${data.sub}</p>` : ''}
+      </header>
+
+      ${videoBlock}
+
+      <div class="filmstrip filmstrip--stills">
+        <div class="filmstrip__head">
+          <h3>Film Stills</h3>
+          <div class="meta">${data.stills.length} frames · scroll →</div>
+        </div>
+        <div class="filmstrip__rail">${stillsRail}</div>
+      </div>
+
+      <div class="filmstrip filmstrip--bts">
+        <div class="filmstrip__head">
+          <h3>Behind the Scenes</h3>
+          <div class="meta">${data.bts.length} photographs · scroll →</div>
+        </div>
+        <div class="filmstrip__rail">${btsRail}</div>
+      </div>
+    `;
+
+    modal.classList.add('is-open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    setTimeout(() => { modalInner.innerHTML = ''; }, 500);
+  }
+
+  document.querySelectorAll('.portrait').forEach(p => {
+    p.addEventListener('click', () => openModal(p.dataset.portrait));
+    p.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(p.dataset.portrait); }
+    });
+  });
+
+  document.querySelectorAll('.mtile[data-media]').forEach(tile => {
+    tile.addEventListener('click', () => openModal(tile.dataset.media));
+    tile.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(tile.dataset.media); }
+    });
+  });
+  modalClose.addEventListener('click', closeModal);
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal(); });
+
+  /* ============= Video posters (click to load YouTube) ============= */
+  (function () {
+    document.querySelectorAll('.vid__poster').forEach(p => {
+      p.addEventListener('click', () => {
+        const id = p.dataset.yt;
+        if (!id) return;
+        window.open(`https://www.youtube.com/watch?v=${encodeURIComponent(id)}`, '_blank', 'noopener,noreferrer');
+      });
+    });
+  })();
+
+  /* ============= Luz photography gallery — injected in modal ============= */
+
+
+</script>
+
+<!-- ========================================================
+     TWEAKS PANEL — Voice / Mood / Air
+     ======================================================== -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<div id="tweaks-root"></div>
+<script type="text/babel">
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "voice": "witness",
+    "mood": "ember",
+    "air": 70
+  }/*EDITMODE-END*/;
+
+  function applyTweaks(t) {
+    const html = document.documentElement;
+    html.dataset.voice = t.voice;
+    html.dataset.mood = t.mood;
+    html.style.setProperty('--air', String(t.air / 60));
+  }
+
+  function CancerAlleyTweaks() {
+    const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+    React.useEffect(() => { applyTweaks(t); }, [t]);
+
+    return (
+      <TweaksPanel title="Tweaks">
+        <TweakSection label="Voice" subtitle="Typographic identity" />
+        <TweakRadio
+          label="Type"
+          value={t.voice}
+          options={[
+            { value: 'editorial', label: 'Editorial' },
+            { value: 'witness',   label: 'Witness'   },
+            { value: 'document',  label: 'Document'  }
+          ]}
+          onChange={(v) => setTweak('voice', v)}
+        />
+
+        <TweakSection label="Mood" subtitle="Color temperature" />
+        <TweakRadio
+          label="Palette"
+          value={t.mood}
+          options={[
+            { value: 'ember', label: 'Ember' },
+            { value: 'dusk',  label: 'Dusk'  },
+            { value: 'bone',  label: 'Bone'  }
+          ]}
+          onChange={(v) => setTweak('mood', v)}
+        />
+
+        <TweakSection label="Atmosphere" subtitle="Grain · vignette · weight" />
+        <TweakSlider
+          label="Air"
+          value={t.air}
+          min={0} max={100} step={1}
+          onChange={(v) => setTweak('air', v)}
+        />
+      </TweaksPanel>
+    );
+  }
+
+  applyTweaks(TWEAK_DEFAULTS);
+  ReactDOM.createRoot(document.getElementById('tweaks-root'))
+    .render(<CancerAlleyTweaks />);
+</script>
+
+</body>
+</html>
